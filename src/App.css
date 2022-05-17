@@ -58,6 +58,7 @@ nav p{
 .blog{
   gap: 5px;
   flex-direction: column;
+  position: relative;
 }
 
 .img img{
@@ -66,8 +67,6 @@ nav p{
   border-radius: 10px;
   object-fit: cover;
 }
-
-
 
 .details{
   margin-block: 3em;
@@ -84,12 +83,29 @@ nav p{
   letter-spacing: 1px;
 }
 
-a{
+button{
   color: #918E9B;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .date{
   padding-bottom: .4em;
+}
+
+.map{
+  width: 90%;
+  max-width: 700px;
+  height: 80%;
+  margin-inline: auto;
+  /* flex-direction: column; */
+  background: #e5e5e5;
+  /* position: absolute;
+  top: 10%;
+  z-index: 999999; */
 }
 
 @media (min-width: 600px){
