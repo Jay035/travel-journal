@@ -1,5 +1,5 @@
-import React, {useState} from 'react'; 
-import Data from './Data';
+import React, { useState } from 'react'; 
+import closeBtn from './assets/close.png';
 
 import {
   ComposableMap,
@@ -33,14 +33,17 @@ const geoURL = "https://raw.githubusercontent.com/zcreativelabs/react-simple-map
 
 
 
-export const Modal = ({item}) => {
-    // console.log(item)
+export const Modal = ({item, mapVisible, setMapVisible}) => {
     const [content, setContent] = useState("");
+
     return (
-            <div key={item.id}>
-                <div className="map flex justify-center align-center">
+            <div key={item.id} className="modal">
+                <div className={mapVisible ? `map flex justify-center align-center flex-col active` : `map flex justify-center align-center flex-col`}>
+                    <div className="close-btn" onClick={() => setMapVisible(!mapVisible)}>
+                        <img src={closeBtn} alt="close button" />
+                    </div>
                     <ReactTooltip>{content}</ReactTooltip>
-                    <div className="" style={{width: "500px", borderStyle: "double"}}>
+                    <div className="" style={{width: "70%", borderStyle: "double", background: "#e5e5e5"}}>
                         <ComposableMap data-tip="">
                         <ZoomableGroup zoom={1}>
                             <Geographies geography={geoURL}>

@@ -6,9 +6,17 @@
   box-sizing: border-box;
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
 /* utility classes */
 .flex{
   display: flex;
+}
+
+.flex-col{
+  flex-direction: column;
 }
 
 .justify-between{
@@ -26,6 +34,11 @@
 .font-bold{
   font-weight: bold;
 }
+
+.hidden{
+  display: none;
+}
+
 
 body{
   font-family: 'Inter', sans-serif;
@@ -48,6 +61,10 @@ nav p{
   word-spacing: -.1em;
 }
 
+.App{
+  position: relative;
+}
+
 .container{
   width: 90%;
   max-width: 700px;
@@ -58,7 +75,7 @@ nav p{
 .blog{
   gap: 5px;
   flex-direction: column;
-  position: relative;
+  /* position: relative; */
 }
 
 .img img{
@@ -96,16 +113,44 @@ button{
   padding-bottom: .4em;
 }
 
+/* ====================================================== */
+/* modal */
+
 .map{
-  width: 90%;
-  max-width: 700px;
-  height: 80%;
-  margin-inline: auto;
-  /* flex-direction: column; */
-  background: #e5e5e5;
-  /* position: absolute;
-  top: 10%;
-  z-index: 999999; */
+  width: 100%;
+  /* max-width: 1200px; */
+  height: 100vh;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, .3);
+  position:fixed;
+  top: 3%;
+  left: 0;
+  /* right: 0; */
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.map.active{
+  opacity: 1;
+  z-index: 999999;
+  pointer-events: unset;
+}
+
+.close-btn{
+  background: #F55A5A;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  right: 2em;
+  padding: 1rem;
+}
+
+.close-btn img{
+  width: 40px;
+  /* position: "absolute", top: "1em", right: "2em" */
 }
 
 @media (min-width: 600px){
