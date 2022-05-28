@@ -98,6 +98,7 @@ nav p{
 .country--name {
   gap: 5px;
   letter-spacing: 1px;
+  margin-bottom: .3em;
 }
 
 button{
@@ -130,6 +131,30 @@ button{
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .map{
+    padding: 0;
+  }
+
+  .close-btn{
+    right: 1em;
+  }
+
+  .close-btn img{
+    width: 20px !important;
+  }
+
+  .map-container{
+    width: 90% !important;
+  }
+}
+
+.map-container{
+  width: 70%;
+  border-style: double;
+  background-color: #e5e5e5;
 }
 
 .map.active{

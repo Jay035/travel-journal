@@ -43,7 +43,7 @@ export const Modal = ({item, mapVisible, setMapVisible}) => {
                         <img src={closeBtn} alt="close button" />
                     </div>
                     <ReactTooltip>{content}</ReactTooltip>
-                    <div className="" style={{width: "70%", borderStyle: "double", background: "#e5e5e5"}}>
+                    <div className="map-container">
                         <ComposableMap data-tip="">
                         <ZoomableGroup zoom={1}>
                             <Geographies geography={geoURL}>
